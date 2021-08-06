@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Portfólio</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/393656b2b8.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+</head>
+
+<body>
+    <nav>
+        <ul>
+            <li><a href="#inicio"> Início </a></li>
+            <li><a href="#sobre-mim"> Sobre mim </a></li>
+            <li><a href="#projetos"> Projetos </a></li>
+            <li><a href="#habilidades"> Habilidade </a></li>
+            <li><a href="#contato"> Contato </a></li>
+        </ul>
+    </nav>
+
+    <header id="inicio">
+        <div>
+            <p>"Ninguém vai poder querer nos dizer como amar!"</p>
+            <span>Johnny Hooker (feat Liniker) - Flutua</span>
+        </div>
+        <div id="img-freelove">
+            <img src="../static/img/free love-pana.png"
+                alt="Mulher graffitando na parede a frase 'free love', que significa liberte o amor, em tradução livre." />
+        </div>
+    </header>
+
+    <section id="sobre-mim">
+        <div>
+            <img src="../static/img/minha-foto.jpg" width="400px"
+                alt="Foto do autor em pé com cabelo azul e ao fundo o Museu do Amanhã do Rio de Janeiro/RJ." />
+        </div>
+        <div class="text">
+            <p>
+                Aspirante por informática desde cedo, fiz alguns cursos na área por
+                volta de 2007. Iniciei no mercado de trabalho como aprendiz de
+                escritório e em seguida trabalhei bastante com atendimento ao público
+                em supermercado e como atendente de telemarketing. Em 2014, iniciei
+                minha primeira graduação em Fisioterapia pela Universidade Salgado de
+                Oliveira em Juiz de Fora/MG e me formei em 2018.
+            </p>
+            <p>
+                Em 2021, me mudei para a capital do Rio de Janeiro e, decidi me
+                dedicar mais ao que sempre gostei, comecei uma nova graduação, Análise
+                e Desenvolvimento de Sistemas pela Estácio no Rio de Janeiro/RJ.
+                Também iniciei um curso na área de desenvolvimento na Blue EdTech, e,
+                ao mesmo tempo, tive a felicidade de ser selecionado para o bootcamp
+                de eng. Google Cloud da SoulCode.
+            </p>
+            <p>
+                Tenho bastante facilidade para aprender, gosto muito de tecnologia, do
+                novo e do diferente. Possuo um perfil analítico, questionador e sou
+                muito dedicado no que faço. Sou tranquilo e possuo facilidade quanto a
+                relação interpessoal e comunicação.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <div id="admin">
+            <a href="/login"><i class="fas fa-user-cog"></i></a>
+        </div>
+        <div class="carousel">
+            {% for p in projetos %}
+            <a class="carousel-item" href="#">
+                <img src="{{p.imagem}}" alt="" />
+                <h2>{{p.nome}}</h2>
+                <p>
+                    {{p.descricao}}
+                </p>
+                <button class="waves-effect waves-light btn-large meio" onclick="window.open('{{p.link}}','_blank')">
+                    Veja Mais
+                </button>
+            </a>
+            {% endfor %}
+            <!-- <a class="carousel-item" href="#two!">
+                <img src="../static/img/projeto2.jpg" alt="" />
+                <h2>Pesquisa Covid-19</h2>
+                <p>
+                    Outro projeto do freeCodeCamp eu desenvolvi uma pesquisa simples
+                    sobre Covid-19 usando form do HTML e estilizei com CSS.
+                </p>
+                <button class="waves-effect waves-light btn-large meio"
+                    onclick="window.open('https://codepen.io/atumvegan/full/XWmdxKm', '_blank')">
+                    Veja Mais
+                </button>
+            </a>
+            <a class="carousel-item" href="#three!">
+                <img src="../static/img/projeto3.jpg" alt="" />
+                <h2>Página Técnica de Documentação</h2>
+                <p>Nesse projeto eu fiz uma página técnica de documentação do CSS.</p>
+                <button class="waves-effect waves-light btn-large meio"
+                    onclick="window.open('https://codepen.io/atumvegan/full/rNOGqmx', '_blank')">
+                    Veja Mais
+                </button>
+            </a>
+            <a class="carousel-item" href="#four!">
+                <img src="../static/img/projeto4.jpg" alt="" />
+                <h2>Portfólio</h2>
+                <p>No último projeto eu montei um portfólio usando bootstrap.</p>
+                <button class="waves-effect waves-light btn-large meio"
+                    onclick="window.open('https://codepen.io/atumvegan/full/xxgOPeo', '_blank')">
+                    Veja Mais
+                </button>
+            </a> -->
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades Técnicas</h2>
+        <div>
+            <i class="fab fa-python fa-2x"></i>
+            <p>Python</p>
+            <div>
+                <span id="python" class="load">80%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fab fa-html5 fa-2x"></i>
+            <p>HTML</p>
+            <div>
+                <span id="html" class="load">85%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fab fa-css3-alt fa-2x"></i>
+            <p>CSS</p>
+            <div>
+                <span id="css" class="load">60%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fab fa-js-square fa-2x"></i>
+            <p>JS</p>
+            <div>
+                <span id="js" class="load">80%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fab fa-bootstrap fa-2x"></i>
+            <p>Bootstrap</p>
+            <div>
+                <span id="bootstrap" class="load">50%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fas fa-cloud fa-2x"></i>
+            <p>Google Cloud</p>
+            <div>
+                <span id="google-cloud" class="load">70%</span>
+            </div>
+        </div>
+        <div>
+            <i class="fab fa-git fa-2x"></i>
+            <p>Git</p>
+            <div>
+                <span id="git" class="load">85%</span>
+            </div>
+        </div>
+    </section>
+    <section id="contato">
+        <div id="form">
+            <h2>Envie uma mensagem para mim</h2>
+            <form class="form-contato" action="/send" method="POST">
+                <div class="input-field">
+                    <label for="name">Nome</label>
+                    <input id="name" name="name" type="text" class="validate" />
+                </div>
+                <div class="input-field">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" class="validate" />
+                </div>
+                <div class="input-field">
+                    <textarea name="message" id="message" data-length="200" class="materialize-textarea validate"
+                        placeholder="Digite no mínimo 10 caracteres"></textarea>
+                    <label for="message">Mensagem</label>
+                </div>
+                <button id="send" disabled>Enviar</button>
+            </form>
+        </div>
+        <div id="carregamento">
+            <p>Enviando mensagem</p>
+            <div id="loader"></div>
+        </div>
+        <div id="redes">
+            <a href="https://www.linkedin.com/in/faelzsouza/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.instagram.com/faelzsouza/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/faelzsouza" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://discordapp.com/users/273935925095170050" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://github.com/faelzsouza" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
